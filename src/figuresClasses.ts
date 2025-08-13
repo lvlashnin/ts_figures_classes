@@ -26,7 +26,9 @@ export class Triangle implements Figure {
     const sumOfOthers = a + b + c - theGreatest;
 
     if (theGreatest >= sumOfOthers) {
-      throw new Error('Something is wrong with your sides 0_o');
+      throw new Error(
+        `Triangle cannot be formed with sides of length ${a}, ${b} and ${c}`,
+      );
     }
   }
 
