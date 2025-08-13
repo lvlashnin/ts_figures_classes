@@ -16,10 +16,10 @@ export class Triangle implements Figure {
     public b: number,
     public c: number,
   ) {
-    this.color = color;
-
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('Sides must be greater than 0');
+      throw new Error(
+        `Triangle sides must be greater than 0, got ${a} or ${b} or ${c} more than 0`,
+      );
     }
 
     const theGreatest = Math.max(a, b, c);
@@ -53,7 +53,7 @@ export class Circle implements Figure {
     public radius: number,
   ) {
     if (radius <= 0) {
-      throw new Error('Radius must be greater than 0');
+      throw new Error(`Circle radius must be greater than 0, got ${radius}.`);
     }
   }
 
@@ -73,7 +73,9 @@ export class Rectangle implements Figure {
     public height: number,
   ) {
     if (width <= 0 || height <= 0) {
-      throw new Error('Width and height must be greater than 0');
+      throw new Error(
+        `Rectangle width or heigth must be greater than 0, check ${width} or ${height}.`,
+      );
     }
   }
 
